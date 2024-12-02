@@ -6,6 +6,19 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+    public function getProjects(){
+        $projects = Projects::all();
+        if(!$projects){
+            return response()->json([
+                'could not find any projects'
+            ]);
+        }
+        return response()->json([
+            'successfuly found all',
+            $projects
+        ]);
+    }
+
     public function getProject($id){
         $project = Projects::find($id);
         if(!$project){
