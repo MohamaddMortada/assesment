@@ -10,32 +10,32 @@ class ProjectController extends Controller
         $project = Projects::find($id);
         if(!$project){
             return response()->json([
-                'message':'could not find project with such id'
+                'could not find project with such id'
             ]);
         }
         return response()->json([
-            'message':'successfuly found',
-            'project':$project
+            'successfuly found',
+            $project
         ]);
     }
     public function setProject(Request $request){
         $project = Projects::create([
-            'name' => $request->input('name');
-            'members'=>$request->input('members');
+            'name' => $request->input('name'),
+            'members'=>$request->input('members'),
         ]);
         return response()->json([
-            'message':'successfuly created',
-            'project':$project
+            'successfuly created',
+            $project
         ]);
     }
     public function editProject(Request $request,$id){
         $project = Projects::find($id)->update([
-            'name' => $request->input('name');
-            'members'=>$request->input('members');
+            'name' => $request->input('name'),
+            'members'=>$request->input('members'),
         ]);
         return response()->json([
-            'message':'successfuly edited',
-            'project':$project
+            'successfuly edited',
+            $project
         ]);
     }
 
@@ -43,11 +43,11 @@ class ProjectController extends Controller
         $project = Projects::find($id);
         if(!$project){
             return response()->json([            
-                'message':'project not found',
+                'project not found',
         ]);}
         return response()->json([ 
-            'message':'project deleted successfuly',
-            'project':$project
+            'project deleted successfuly',
+            $project
         ]);
     }
 
