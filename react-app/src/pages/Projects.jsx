@@ -4,7 +4,7 @@ import Project from "../components/Project";
 const Projects = () => {
   return (
     <div className="projects-container">
-      {projects.map((p) => (
+      {Projects.map((p) => (
         <Project project={p} key={p.id} />
       ))}
     </div>
