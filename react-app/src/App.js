@@ -5,11 +5,11 @@ import Projects from "./pages/Projects";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
-      </BrowserRouter>
+      <ProjectsProvider>
+      <div className="App">
+        <Projects />
+      </div>
+    </ProjectsProvider>
     </div>
   );
 }
