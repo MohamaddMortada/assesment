@@ -27,6 +27,16 @@ class ProjectController extends Controller
             'message':'successfuly created',
             'project':$project
         ]);
-
     }
+    public function editProject(Request $request,$id){
+        $project = Projects::find($id)->update([
+            'name' => $request->input('name');
+            'members'=>$request->input('members');
+        ]);
+        return response()->json([
+            'message':'successfuly edited',
+            'project':$project
+        ]);
+    }
+
 }

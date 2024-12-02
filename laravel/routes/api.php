@@ -8,4 +8,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/{id}',ProjectController::class,'getProject');
-Route::put('/create',ProjectController::class,'setProject');
+Route::post('/create',ProjectController::class,'setProject');
+Route::put('/edit/{id}',ProjectController::class,'editProject');
+
