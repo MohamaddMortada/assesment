@@ -18,6 +18,7 @@ Route::delete('/project/{id}',[ProjectController::class,'deleteProject']);
 Route::get('/{id}',[UserController::class,'getUser']);
 Route::post('/user',[UserController::class,'setUser']);
 Route::put('/user/{id}',[UserController::class,'editUser']);
+Route::delete('/user/{id}',[UserController::class,'deleteUser']);
 
 
 
