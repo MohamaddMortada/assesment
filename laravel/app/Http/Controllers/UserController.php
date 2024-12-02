@@ -17,4 +17,17 @@ class UserController extends Controller {
             $user
         ]);
     }
+    public function setUser(Request $request){
+        $user = Users::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => $request->input('password'),
+        ]);
+        if(!user)   
+            return response()->json(['error while creating user']);
+        return response()->json([
+            'successfuly created',
+            $user
+        ]);
+    }
 }
