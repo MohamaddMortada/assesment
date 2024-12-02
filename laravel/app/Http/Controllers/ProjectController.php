@@ -18,4 +18,15 @@ class ProjectController extends Controller
             'project':$project
         ]);
     }
+    public function setProject(Request $request){
+        $project = Projects::create([
+            'name' => $request->input('name');
+            'members'=>$request->input('members');
+        ]);
+        return response()->json([
+            'message':'successfuly created',
+            'project':$project
+        ]);
+
+    }
 }
