@@ -5,7 +5,7 @@ export const ProjectsProvider = ({ children }) => {
     const [projects, setProjects] = useState([]);
     useEffect(() => {
         const fetchProjects = async () => {
-            const response = await fetch("http://127.0.0.1:8000/api/projects",method);
+            const response = await fetch("http://127.0.0.1:8000/api/projects");
             const data = await response.json();
             setProjects(data);
           };
