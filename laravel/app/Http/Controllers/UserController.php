@@ -23,10 +23,23 @@ class UserController extends Controller {
             'email' => $request->input('email'),
             'password' => $request->input('password'),
         ]);
-        if(!user)   
+        if(!$user)   
             return response()->json(['error while creating user']);
         return response()->json([
             'successfuly created',
+            $user
+        ]);
+    }
+    public function editUser(Request $request,$id){
+        $user = Users::find($id)->update([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => $request->input('password'),
+        ]);
+        if(!$user)
+            return response()->json(['error while editing user']);
+        return response()->json([
+            'successfuly edited',
             $user
         ]);
     }
